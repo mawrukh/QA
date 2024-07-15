@@ -4,11 +4,11 @@ describe('Registration Form Positive Scenarios', () => {
   })
 
   it('TC001: Successful registration with all fields filled', () => {
-    cy.get('#fullName').type('Emily Johnson')
-    cy.get('#email').type('emily.j@email.com')
+    cy.get('#fullName').type('Mahrukh Sjf')
+    cy.get('#email').type('Madcj@email.com')
     cy.get('#password').type('P@ssw0rd123')
     cy.get('#confirmPassword').type('P@ssw0rd123')
-    cy.get('#dateOfBirth').type('1990-05-15')
+    cy.get('#dateOfBirth').type('2000-05-15')
     cy.get('#gender').select('Female')
     cy.get('#newsletter').check()
     
@@ -16,15 +16,15 @@ describe('Registration Form Positive Scenarios', () => {
 
     cy.url().should('include', '/confirmation')
     cy.contains('Registration Successful').should('be.visible')
-    cy.contains('Emily Johnson').should('be.visible')
-    cy.contains('emily.j@email.com').should('be.visible')
+    cy.contains('Mahrukh Sjf').should('be.visible')
+    cy.contains('Madcj@email.com').should('be.visible')
   })
 
   it('TC002: Successful registration with minimum required fields', () => {
     cy.get('#fullName').type('Michael Chang')
     cy.get('#email').type('mchang@company.net')
-    cy.get('#password').type('SecureLogin!9')
-    cy.get('#confirmPassword').type('SecureLogin!9')
+    cy.get('#password').type('abcpassword3@')
+    cy.get('#confirmPassword').type('abcpassword3@')
     cy.get('#dateOfBirth').type('1985-12-03')
     cy.get('#gender').select('Male')
     // Not checking newsletter subscription
